@@ -74,7 +74,7 @@ int LeeDirArch(int dr, int i)//, short int *edr)
    short int *tama = (short int *)&map[j+0x1c];
                      
   printf("   %s   ,%s    ,%d   ,%d   ,%d\n", arc, ext, *tipo, *cluster, *tama);
-  j=j+20;
+  j=j+32;
         strcpy(arc2, &map[j+0x00]); // nombre del archivo
         arc2[8]='\0';
       strcpy(ext2, &map[j+ 0x08]); // extencion del archivo
