@@ -102,11 +102,11 @@ int leerdatos(int i){
 LeeDirArch(int dr)//, short int *edr)
 {
  char arc[8], ext[3];
-  
+  int j;
   //short int temp=0;
 
-  j==dr;
-  i=0;
+  j=dr;
+  //i=0;
   //while(temp<=*edr)
   //{
       strcpy(arc, &map[j]); // nombre del archivo
@@ -116,7 +116,7 @@ LeeDirArch(int dr)//, short int *edr)
    short int *tipo = (short int *)&map[j+16];
    short int *cluster = (short int *)&map[j+34];
                      
-  printf("%d   %s   %s    %d\n", arc, ext, *ts);  
+  printf("%d   %s   %s    %d   %d\n", arc, ext, *tipo, *cluster);  
   
   //printf("%s\n", ids); 
 
