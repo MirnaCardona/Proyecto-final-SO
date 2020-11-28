@@ -81,20 +81,22 @@ int leerdatos(int i){
   printf("Tamaño del FAT: %d\n", *tdf);
   int tdf2= *tdf;
   
-  short int *sdd = (short int *)&map[i+32];
+  short int *sdd = (short int *)&map[i+32]; // sectores del disco
   printf("Sectores del Disco: %d\n", *sdd);
+  //short int temp = *sdd;
 
-  strcpy(ev, &map[i+43]);
-  printf("Etiqueta del Volumnen: %s\n",ev);
+  strcpy(ev, &map[i+ 0x2b]); // etiqueta del volumen
+  ev[11]='\0';
+  printf("Etiqueta del Volumen: %s\n",ev);
 
-  strcpy(ids, &map[i+ 0x36]);
+  strcpy(ids, &map[i+ 0x36]); // id del sistema
+  ids[8]='\0';
   printf("ID del Sistema: %s\n", ids);
-  int dr = (*sr + (ncf * *tdf))* *ts;
-  int di = dr + (*edr * 32);
-  
+  int dr = (*sr + (ncf * *tdf))* *ts; // dir raiz
+  int di = dr + (*edr * 32); // inicio datos
 
- printf("Directorio Raiz: 0x%04x\n", dr);
- printf("Inicio Datos: 0x%04x\n\n", di);
+  printf("Directorio Raiz: 0x%04x\n", dr);
+  printf("Inicio Datos: 0x%04x\n\n", di);
 }
 
 int partitions(){
