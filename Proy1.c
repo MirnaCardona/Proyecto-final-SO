@@ -75,7 +75,7 @@ int LeeDirArch(int dr, int i, short int *edr)
    short int *cluster = (short int *)&map[j+0x1a];
    short int *tama = (short int *)&map[j+0x1c];
                      
-  printf("Archivo %s,  %s   .%s    ,%d   ,%d   ,%d\n", arcvbn,tempc,  ext, *tipo, *cluster, *tama);
+  printf("Archivo %s,  %s   .%s    ,%s,  %s   .%s    ,%d   ,%d   ,%d\n", arcvbn,tempc,  ext, arcvbn,tempc,  ext, *tipo, *cluster, *tama);
   j=j+32;
     temp=temp+32;
 }
