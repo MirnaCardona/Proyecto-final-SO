@@ -55,7 +55,7 @@ int esMBR(char *base){
   return res;  
 }
 
-LeeDirArch(int dr)//, short int *edr)
+int LeeDirArch(int dr)//, short int *edr)
 {
  char arc[8], ext[3];
   int j;
