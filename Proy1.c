@@ -57,7 +57,7 @@ int esMBR(char *base){
 
 int LeeDirArch(int dr, int i)//, short int *edr)
 {
- char arc[8], ext[3];
+ char arc[8], ext[3],arc2[8], ext2[3];
   int j;
   //short int temp=0;
 
@@ -75,15 +75,15 @@ int LeeDirArch(int dr, int i)//, short int *edr)
                      
   printf("   %s   ,%s    ,%d   ,%d   ,%d\n", arc, ext, *tipo, *cluster, *tama);
   j=j+20;
-        strcpy(arc, &map[j+0x00]); // nombre del archivo
-        arc[8]='\0';
-      strcpy(ext, &map[j+ 0x08]); // extencion del archivo
-  ext[3]='\0';  
-   short int *tipo = (short int *)&map[j+0x0b];
-   short int *cluster = (short int *)&map[j+0x1a];
-   short int *tama = (short int *)&map[j+0x1c];
+        strcpy(arc2, &map[j+0x00]); // nombre del archivo
+        arc2[8]='\0';
+      strcpy(ext2, &map[j+ 0x08]); // extencion del archivo
+  ext2[3]='\0';  
+   short int *tipo2 = (short int *)&map[j+0x0b];
+   short int *cluster2 = (short int *)&map[j+0x1a];
+   short int *tama2 = (short int *)&map[j+0x1c];
                      
-  printf("   %s   ,%s    ,%d   ,%d   ,%d\n", arc, ext, *tipo, *cluster, *tama);  
+  printf("   %s   ,%s    ,%d   ,%d   ,%d\n", arc2, ext2, *tipo2, *cluster2, *tama2);  
   
   
   //printf("%s\n", ids); 
