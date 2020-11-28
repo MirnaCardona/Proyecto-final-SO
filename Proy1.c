@@ -57,7 +57,7 @@ int esMBR(char *base){
 
 int LeeDirArch(int dr, int i, short int *edr)
 {
- char arc[10], ext[3], tempc[2];//,arc2[8], ext2[3],arc3[8], ext3[3];
+ char arcvbn[10], ext[3], tempc[8];
   int j, temp=0;
 
   j=dr+i;
@@ -65,15 +65,17 @@ int LeeDirArch(int dr, int i, short int *edr)
   while(temp<=*edr+32)
   {
    // memset(arc,0,8);
-      strcpy(arc,"hola");//, &map[j+0x00]); // nombre del archivo
-        arc[8]='\0';
+      strcpy(arcvbn,"hola");//, &map[j+0x00]); // nombre del archivo
+        arcvbn[8]='\0';
+     strcpy(tempc, &map[j+0x00]); // nombre del archivo
+        tempc[8]='\0';
       strcpy(ext, &map[j+ 0x08]); // extencion del archivo
   ext[3]='\0';  
    short int *tipo = (short int *)&map[j+0x0b];
    short int *cluster = (short int *)&map[j+0x1a];
    short int *tama = (short int *)&map[j+0x1c];
                      
-  printf("Archivo  %s   .%s    ,%d   ,%d   ,%d\n", arc, ext, *tipo, *cluster, *tama);
+  printf("Archivo %s,  %s   .%s    ,%d   ,%d   ,%d\n", arcvbn,tempc,  ext, *tipo, *cluster, *tama);
   j=j+32;
     temp=temp+32;
 }
