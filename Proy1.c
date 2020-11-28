@@ -68,9 +68,10 @@ int LeeDirArch(int dr, int i, short int *edr)
      strcpy(tempc, &map[j+0x00]); // nombre del archivo
   tempc[8]='\0';
       strcpy(arcvbn,tempc);
+     arcvbn[8]='\0';
    strcpy(ext, &map[j+ 0x08]); // extencion del archivo
   ext[3]='\0'; 
-     strcat(tempc, ext);
+    // strcat(tempc, ext);
    short int *tipo = (short int *)&map[j+0x0b];
    short int *cluster = (short int *)&map[j+0x1a];
    short int *tama = (short int *)&map[j+0x1c];
