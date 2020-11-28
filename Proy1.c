@@ -65,7 +65,7 @@ int LeeDirArch(int dr, int i, short int *edr)
   while(temp<=*edr+32)
   {
    // memset(arc,0,8);
-      strcpy(arc, &map[j+0x00]); // nombre del archivo
+      strcpy(arc,"hola")//, &map[j+0x00]); // nombre del archivo
         arc[8]='\0';
       strcpy(ext, &map[j+ 0x08]); // extencion del archivo
   ext[3]='\0';  
