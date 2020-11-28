@@ -65,14 +65,15 @@ int LeeDirArch(int dr, int i)//, short int *edr)
   //i=0;
   //while(temp<=*edr)
   //{
-      strcpy(arc, &map[j]); // nombre del archivo
+      strcpy(arc, &map[j+0x00]); // nombre del archivo
         arc[8]='\0';
       strcpy(ext, &map[j+ 0x08]); // extencion del archivo
   ext[3]='\0';  
    short int *tipo = (short int *)&map[j+0x0b];
    short int *cluster = (short int *)&map[j+0x1a];
+   short int *tama = (short int *)&map[j+0x1c];
                      
-  printf("   %s   ,%s    ,%d   ,%d\n", arc, ext, *tipo, *cluster);  
+  printf("   %s   ,%s    ,%d   ,%d   ,%d\n", arc, ext, *tipo, *cluster, *tama);  
   
   //printf("%s\n", ids); 
 
