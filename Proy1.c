@@ -55,16 +55,15 @@ int esMBR(char *base){
   return res;  
 }
 
-int LeeDirArch(int dr, int i)//, short int *edr)
+int LeeDirArch(int dr, int i, short int *edr)
 {
  char arc[8], ext[3],arc2[8], ext2[3],arc3[8], ext3[3];
-  int j;
-  //short int temp=0;
+  int j, temp=0;
 
   j=dr+i;
   //i=0;
-  //while(temp<=*edr)
-  //{
+  while(temp<=*edr)
+  {
       strcpy(arc, &map[j+0x00]); // nombre del archivo
         arc[8]='\0';
       strcpy(ext, &map[j+ 0x08]); // extencion del archivo
@@ -75,6 +74,9 @@ int LeeDirArch(int dr, int i)//, short int *edr)
                      
   printf("   %s   ,%s    ,%d   ,%d   ,%d\n", arc, ext, *tipo, *cluster, *tama);
   j=j+32;
+    temp=temp+32;
+}
+  /*
         strcpy(arc2, &map[j+0x00]); // nombre del archivo
         arc2[8]='\0';
       strcpy(ext2, &map[j+ 0x08]); // extencion del archivo
@@ -95,7 +97,7 @@ int LeeDirArch(int dr, int i)//, short int *edr)
                      
   printf("   %s   ,%s    ,%d   ,%d   ,%d\n", arc3, ext3, *tipo3, *cluster3, *tama3); 
   
-  
+  */
   //printf("%s\n", ids); 
 
  // }
@@ -142,7 +144,7 @@ int leerdatos(int i){
 
   printf("Directorio Raiz: 0x%04x\n", dr);
   printf("Inicio Datos: 0x%04x\n\n", di);
-  LeeDirArch(dr,i);
+  LeeDirArch(dr,i,edr);
 }
 
 int partitions(){
