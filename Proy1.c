@@ -97,8 +97,32 @@ int leerdatos(int i){
 
   printf("Directorio Raiz: 0x%04x\n", dr);
   printf("Inicio Datos: 0x%04x\n\n", di);
+  LeeDirArch(dr);
 }
+LeeDirArch(int dr)//, short int *edr)
+{
+ char arc[8], ext[3];
+  
+  //short int temp=0;
 
+  j==dr;
+  i=0;
+  //while(temp<=*edr)
+  //{
+      strcpy(arc, &map[j]); // nombre del archivo
+        arc[8]='\0';
+      strcpy(ext, &map[j+ 10]); // extencion del archivo
+  ext[3]='\0';  
+   short int *tipo = (short int *)&map[j+16];
+   short int *cluster = (short int *)&map[j+34];
+                     
+  printf("%d   %s   %s    %d\n", arc, ext, *ts);  
+  
+  //printf("%s\n", ids); 
+
+ // }
+ 
+}
 int partitions(){
    int a=0, a2=0;
   if(esMBR(map)){
