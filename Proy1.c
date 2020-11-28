@@ -55,13 +55,13 @@ int esMBR(char *base){
   return res;  
 }
 
-int LeeDirArch(int dr)//, short int *edr)
+int LeeDirArch(int dr, int i)//, short int *edr)
 {
  char arc[8], ext[3];
   int j;
   //short int temp=0;
 
-  j=dr;
+  j=dr+i;
   //i=0;
   //while(temp<=*edr)
   //{
@@ -120,7 +120,7 @@ int leerdatos(int i){
 
   printf("Directorio Raiz: 0x%04x\n", dr);
   printf("Inicio Datos: 0x%04x\n\n", di);
-  LeeDirArch(dr);
+  LeeDirArch(dr,i);
 }
 
 int partitions(){
