@@ -85,9 +85,11 @@ int leerdatos(int i){
   printf("Sectores del Disco: %d\n", *sdd);
 
   strcpy(ev, &map[i+43]);
+    ev[11]='\0';
   printf("Etiqueta del Volumnen: %s\n",ev);
 
   strcpy(ids, &map[i+ 0x36]);
+    ids[8]='\0';
   printf("ID del Sistema: %s\n", ids);
   int dr = (*sr + (ncf * *tdf))* *ts;
   int di = dr + (*edr * 32);
